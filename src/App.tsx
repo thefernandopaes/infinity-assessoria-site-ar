@@ -7,6 +7,8 @@ import Sobre from "./pages/Sobre.tsx";
 import Servicos from "./pages/Servicos.tsx";
 import ServiceDetail from "./pages/ServiceDetail.tsx";
 import FAQPage from "./pages/FAQPage.tsx";
+import Empresarial from "./pages/Empresarial.tsx";
+import Pessoal from "./pages/Pessoal.tsx";
 import Contato from "./pages/Contato.tsx";
 import Transporte from "./pages/setores/Transporte.tsx";
 import Estudantil from "./pages/setores/Estudantil.tsx";
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/servicos/:slug" element={<ServiceDetail />} />
+          <Route path="/empresarial" element={<Empresarial />} />
+          <Route path="/personal" element={<Pessoal />} />
           <Route path="/setores/transporte" element={<Transporte />} />
           <Route path="/setores/estudantil" element={<Estudantil />} />
           <Route path="/setores/turismo" element={<Turismo />} />

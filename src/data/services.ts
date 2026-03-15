@@ -1,6 +1,7 @@
 import {
   Workflow, BarChart3, Cog, Users, Zap, FileCheck,
   Code, LayoutDashboard, Handshake, CreditCard,
+  Megaphone, Globe, Ship,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,6 +26,7 @@ export interface Service {
   features: ServiceFeature[];
   benefits: ServiceBenefit[];
   useCases: string[];
+  category: "pj" | "pf";
 }
 
 export const SERVICES: Service[] = [
@@ -50,6 +52,7 @@ export const SERVICES: Service[] = [
       { title: "Operaci\u00f3n 24/7 sin costos adicionales", desc: "Los flujos automatizados funcionan continuamente, incluso fuera del horario comercial, sin necesidad de equipo dedicado." },
     ],
     useCases: ["Onboarding automatizado de clientes", "Procesamiento de documentos y aprobaciones", "Notificaciones y alertas operacionales", "Generaci\u00f3n autom\u00e1tica de reportes peri\u00f3dicos"],
+    category: "pj",
   },
   {
     icon: BarChart3,
@@ -73,6 +76,7 @@ export const SERVICES: Service[] = [
       { title: "Decisiones basadas en datos reales", desc: "Dashboards actualizados en tiempo real brindan la base para decisiones operacionales y estrat\u00e9gicas precisas." },
     ],
     useCases: ["Monitoreo de transacciones financieras", "Gesti\u00f3n de ventas multicanal", "Control de flujo de caja en tiempo real", "Auditor\u00eda y rastreo de movimientos"],
+    category: "pj",
   },
   {
     icon: Cog,
@@ -96,6 +100,7 @@ export const SERVICES: Service[] = [
       { title: "Escalabilidad sin complejidad", desc: "Agreg\u00e1 nuevos sistemas al ecosistema sin retrabajo, usando la misma capa de integraci\u00f3n ya establecida." },
     ],
     useCases: ["Integraci\u00f3n ERP + CRM", "Sincronizaci\u00f3n de stock entre canales", "Unificaci\u00f3n de datos de clientes", "Conexi\u00f3n entre sistemas legados y plataformas modernas"],
+    category: "pj",
   },
   {
     icon: Users,
@@ -119,6 +124,7 @@ export const SERVICES: Service[] = [
       { title: "Transparencia que fortalece relaciones", desc: "Los socios tienen acceso directo a sus resultados y pagos, reduciendo fricciones y aumentando el compromiso." },
     ],
     useCases: ["Redes de representantes comerciales", "Programas de afiliados y revendedores", "Franquicias y licenciamientos", "Canales de distribuci\u00f3n indirectos"],
+    category: "pj",
   },
   {
     icon: Zap,
@@ -142,6 +148,7 @@ export const SERVICES: Service[] = [
       { title: "Recuperaci\u00f3n de ingresos", desc: "Identificaci\u00f3n r\u00e1pida de cobros no recibidos, pagos duplicados y divergencias que impactan la caja." },
     ],
     useCases: ["Conciliaci\u00f3n bancaria automatizada", "Conciliaci\u00f3n de ventas vs. cobros", "Conciliaci\u00f3n entre ERPs y gateways de pago", "Auditor\u00eda de reparto de marketplaces"],
+    category: "pj",
   },
   {
     icon: FileCheck,
@@ -165,6 +172,7 @@ export const SERVICES: Service[] = [
       { title: "Autonom\u00eda para el equipo de negocio", desc: "Reportes autoexplicativos reducen la dependencia de equipos t\u00e9cnicos para obtener respuestas sobre la operaci\u00f3n." },
     ],
     useCases: ["Dashboards ejecutivos para C-level", "Reportes de rendimiento de ventas", "An\u00e1lisis de indicadores operacionales", "Reportes regulatorios automatizados"],
+    category: "pj",
   },
   {
     icon: Code,
@@ -188,6 +196,7 @@ export const SERVICES: Service[] = [
       { title: "Propiedad total del c\u00f3digo", desc: "Todo el c\u00f3digo fuente es tuyo, sin lock-in con plataformas ni dependencias de proveedores espec\u00edficos." },
     ],
     useCases: ["Plataformas SaaS verticales", "Aplicaciones para operaci\u00f3n en campo", "Portales de autoservicio", "MVPs y pruebas de concepto"],
+    category: "pj",
   },
   {
     icon: LayoutDashboard,
@@ -211,6 +220,7 @@ export const SERVICES: Service[] = [
       { title: "Gobernanza y control", desc: "Pista de auditor\u00eda, permisos granulares y workflows de aprobaci\u00f3n garantizan compliance interno." },
     ],
     useCases: ["Gesti\u00f3n operacional de empresas de servicios", "Centrales de atenci\u00f3n y back-office", "Plataformas para gesti\u00f3n de franquicias", "Sistemas internos de control y aprobaci\u00f3n"],
+    category: "pj",
   },
   {
     icon: Handshake,
@@ -234,6 +244,7 @@ export const SERVICES: Service[] = [
       { title: "Socios m\u00e1s aut\u00f3nomos", desc: "Con acceso a dashboards y APIs, los socios resuelven dudas operacionales sin contactar a tu equipo." },
     ],
     useCases: ["Integraci\u00f3n con proveedores y distribuidores", "Conexi\u00f3n con operadores log\u00edsticos", "Intercambio de datos con instituciones financieras", "Ecosistemas de marketplace"],
+    category: "pj",
   },
   {
     icon: CreditCard,
@@ -257,6 +268,79 @@ export const SERVICES: Service[] = [
       { title: "Compliance financiero garantizado", desc: "Pista de auditor\u00eda completa y flujos de aprobaci\u00f3n garantizan conformidad con pol\u00edticas internas y externas." },
     ],
     useCases: ["Cobro recurrente de cuotas", "Split de pagos entre socios", "Gesti\u00f3n de pagos a proveedores", "Conciliaci\u00f3n de ventas en marketplace"],
+    category: "pj",
+  },
+  {
+    icon: Megaphone,
+    slug: "marketing-digital",
+    title: "Marketing Digital",
+    shortDesc: "Plataforma integral para productos digitales.",
+    desc: "Plataforma completa para la comercializaci\u00f3n de productos digitales: cursos online, ebooks, clases en vivo, pagos recurrentes, cuotas y toda la infraestructura digital que necesit\u00e1s para escalar tu negocio.",
+    longDesc: "El mercado de productos digitales crece exponencialmente, pero lanzar y gestionar un negocio digital requiere mucho m\u00e1s que contenido de calidad. Necesit\u00e1s una infraestructura que soporte pagos recurrentes, cuotas, entregas automatizadas, acceso segmentado y m\u00e9tricas de conversi\u00f3n. Nuestra plataforma de Marketing Digital integra todo en un solo lugar: desde la creaci\u00f3n de landing pages y embudos de venta hasta el procesamiento de pagos en m\u00faltiples monedas, gesti\u00f3n de suscripciones y an\u00e1lisis de rendimiento. Ya sea que vendas cursos, ebooks, membres\u00edas o clases en vivo, te damos las herramientas para enfocarte en lo que sab\u00e9s hacer mientras la tecnolog\u00eda se encarga del resto.",
+    tags: ["Productos Digitales", "Pagos Recurrentes", "Infraestructura"],
+    features: [
+      { title: "Gesti\u00f3n de productos digitales", desc: "Administr\u00e1 cursos, ebooks, clases y membres\u00edas desde un panel centralizado con control total de accesos y entregas." },
+      { title: "Pagos recurrentes y cuotas", desc: "Configur\u00e1 suscripciones mensuales, planes en cuotas y pagos \u00fanicos con soporte para m\u00faltiples m\u00e9todos de pago." },
+      { title: "Embudos de venta automatizados", desc: "Cre\u00e1 secuencias de conversi\u00f3n con landing pages, emails y ofertas que se activan autom\u00e1ticamente seg\u00fan el comportamiento del usuario." },
+      { title: "Plataforma de clases en vivo", desc: "Integr\u00e1 clases en tiempo real con registro de asistencia, grabaciones autom\u00e1ticas y material complementario." },
+      { title: "M\u00e9tricas de conversi\u00f3n y ROI", desc: "Dashboards con datos de ventas, tasas de conversi\u00f3n, retenci\u00f3n de suscriptores y retorno sobre inversi\u00f3n publicitaria." },
+      { title: "Infraestructura digital escalable", desc: "Hosting, CDN y entrega de contenido optimizados para soportar picos de tr\u00e1fico y crecimiento sostenido." },
+    ],
+    benefits: [
+      { title: "Todo en una sola plataforma", desc: "Elimin\u00e1 la necesidad de m\u00faltiples herramientas desconectadas \u2014 pagos, contenido, emails y analytics en un solo lugar." },
+      { title: "Ingresos recurrentes predecibles", desc: "Modelos de suscripci\u00f3n y cuotas que generan flujo de caja constante y facilitan la planificaci\u00f3n financiera." },
+      { title: "Escal\u00e1 sin l\u00edmites t\u00e9cnicos", desc: "Infraestructura preparada para crecer con tu negocio, sin preocuparte por servidores o rendimiento." },
+    ],
+    useCases: ["Venta de cursos online y certificaciones", "Plataformas de membres\u00eda con contenido exclusivo", "Comercializaci\u00f3n de ebooks y material educativo", "Gesti\u00f3n de clases en vivo y workshops"],
+    category: "pf",
+  },
+  {
+    icon: Globe,
+    slug: "asesoria-internacional",
+    title: "Asesor\u00eda Internacional",
+    shortDesc: "Tr\u00e1mites y asistencia para extranjeros en Argentina.",
+    desc: "Asesoramiento integral para tr\u00e1mites documentales en Argentina: apertura de empresas, obtenci\u00f3n de DNI, asistencia estudiantil internacional y matr\u00edcula en universidades de Medicina.",
+    longDesc: "Mudarse a Argentina o iniciar un negocio en el pa\u00eds implica navegar un laberinto burocr\u00e1tico que puede ser abrumador sin orientaci\u00f3n experta. Desde la obtenci\u00f3n del DNI para extranjeros hasta la apertura formal de empresas con todos los registros impositivos, cada tr\u00e1mite tiene sus particularidades y tiempos. Nuestro servicio de Asesor\u00eda Internacional acompa\u00f1a a personas y empresas en cada paso del proceso: documentaci\u00f3n migratoria, constituci\u00f3n societaria, inscripciones fiscales y, especialmente, asistencia a estudiantes internacionales que buscan matricularse en universidades argentinas de Medicina y otras carreras de alta demanda. Contamos con un equipo que conoce los procesos, los plazos y los requisitos actualizados para que cada tr\u00e1mite se resuelva de forma eficiente y sin sorpresas.",
+    tags: ["Tr\u00e1mites", "Documentaci\u00f3n", "Estudiantil"],
+    features: [
+      { title: "Apertura de empresas en Argentina", desc: "Asesoramiento completo para constituci\u00f3n de SAS, SRL y otros tipos societarios con inscripci\u00f3n en AFIP y registros provinciales." },
+      { title: "Obtenci\u00f3n de DNI para extranjeros", desc: "Gesti\u00f3n del tr\u00e1mite de DNI temporario y permanente, incluyendo turnos, documentaci\u00f3n requerida y seguimiento." },
+      { title: "Asistencia estudiantil internacional", desc: "Orientaci\u00f3n para estudiantes extranjeros sobre visas, convalidaci\u00f3n de t\u00edtulos y requisitos de admisi\u00f3n universitaria." },
+      { title: "Matr\u00edcula en universidades de Medicina", desc: "Acompa\u00f1amiento espec\u00edfico para inscripci\u00f3n en facultades de Medicina argentinas: documentaci\u00f3n, plazos y requisitos." },
+      { title: "Tr\u00e1mites migratorios y residencias", desc: "Gesti\u00f3n de residencias temporarias y permanentes ante Migraciones con seguimiento de expedientes." },
+      { title: "Inscripciones fiscales y registros", desc: "Alta en AFIP, monotributo, responsable inscripto y otros reg\u00edmenes fiscales para personas f\u00edsicas y jur\u00eddicas." },
+    ],
+    benefits: [
+      { title: "Ahorr\u00e1 tiempo y evit\u00e1 errores", desc: "Cada tr\u00e1mite se gestiona con conocimiento actualizado de los requisitos, evitando rechazos y demoras innecesarias." },
+      { title: "Acompa\u00f1amiento personalizado", desc: "Un referente asignado que conoce tu caso y te gu\u00eda en cada etapa hasta la resoluci\u00f3n completa." },
+      { title: "Experiencia en tr\u00e1mites complejos", desc: "A\u00f1os de experiencia gestionando casos de extranjeros nos permiten anticipar problemas y acelerar procesos." },
+    ],
+    useCases: ["Apertura de empresa por extranjeros", "Obtenci\u00f3n de DNI y residencia", "Inscripci\u00f3n de estudiantes internacionales en universidades", "Regularizaci\u00f3n fiscal de personas y empresas extranjeras"],
+    category: "pf",
+  },
+  {
+    icon: Ship,
+    slug: "logistica-internacional",
+    title: "Log\u00edstica Internacional Argentina",
+    shortDesc: "Asesoramiento en rutas, costos y aduanas.",
+    desc: "Asesoramiento especializado en log\u00edstica internacional desde y hacia Argentina: optimizaci\u00f3n de rutas, reducci\u00f3n de costos y tiempos, gesti\u00f3n aduanera y documentaci\u00f3n de viaje.",
+    longDesc: "La log\u00edstica internacional es uno de los factores m\u00e1s cr\u00edticos para la competitividad de cualquier operaci\u00f3n que involucre comercio exterior. Elegir la ruta equivocada, desconocer los requisitos aduaneros o no optimizar los tiempos de tr\u00e1nsito puede significar costos excesivos y demoras que impactan directamente en el negocio. Nuestro servicio de Log\u00edstica Internacional Argentina ofrece asesoramiento experto en cada eslab\u00f3n de la cadena: desde la selecci\u00f3n de las rutas m\u00e1s eficientes y la negociaci\u00f3n con operadores log\u00edsticos hasta la gesti\u00f3n completa de documentaci\u00f3n aduanera y tr\u00e1mites de importaci\u00f3n/exportaci\u00f3n. Analizamos tu operaci\u00f3n, identificamos oportunidades de ahorro y dise\u00f1amos una estrategia log\u00edstica que reduzca costos sin comprometer los tiempos de entrega.",
+    tags: ["Rutas", "Aduanas", "Comercio Exterior"],
+    features: [
+      { title: "Optimizaci\u00f3n de rutas internacionales", desc: "An\u00e1lisis comparativo de rutas mar\u00edtimas, a\u00e9reas y terrestres para encontrar la combinaci\u00f3n m\u00e1s eficiente en costo y tiempo." },
+      { title: "Reducci\u00f3n de costos log\u00edsticos", desc: "Identificaci\u00f3n de oportunidades de ahorro en fletes, consolidaci\u00f3n de cargas y negociaci\u00f3n con operadores." },
+      { title: "Gesti\u00f3n aduanera integral", desc: "Asesoramiento en clasificaci\u00f3n arancelaria, reg\u00edmenes aduaneros, licencias y tr\u00e1mites ante la Aduana argentina." },
+      { title: "Documentaci\u00f3n de viaje y comercio exterior", desc: "Preparaci\u00f3n y revisi\u00f3n de toda la documentaci\u00f3n requerida: facturas, packing lists, certificados de origen y permisos." },
+      { title: "Seguimiento de embarques", desc: "Monitoreo en tiempo real de cargas en tr\u00e1nsito con alertas de estado y estimaciones de arribo actualizadas." },
+      { title: "Asesoramiento en normativa vigente", desc: "Actualizaci\u00f3n permanente sobre cambios regulatorios, restricciones y oportunidades en comercio exterior argentino." },
+    ],
+    benefits: [
+      { title: "Costos log\u00edsticos optimizados", desc: "Estrategias de consolidaci\u00f3n, selecci\u00f3n de rutas y negociaci\u00f3n que reducen el gasto log\u00edstico sin perder calidad de servicio." },
+      { title: "Tiempos de entrega predecibles", desc: "Planificaci\u00f3n log\u00edstica que minimiza demoras y te permite comprometer plazos de entrega con confianza." },
+      { title: "Cumplimiento aduanero garantizado", desc: "Documentaci\u00f3n correcta y clasificaci\u00f3n precisa que evitan retenciones, multas y demoras en aduana." },
+    ],
+    useCases: ["Importaci\u00f3n de insumos y productos terminados", "Exportaci\u00f3n de productos argentinos", "Log\u00edstica para e-commerce internacional", "Mudanzas y traslados internacionales"],
+    category: "pf",
   },
 ];
 

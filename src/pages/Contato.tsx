@@ -14,7 +14,6 @@ import { toast } from "@/hooks/use-toast";
 const schema = z.object({
   nome: z.string().min(2, "El nombre es obligatorio"),
   email: z.string().email("Email inválido"),
-  telefone: z.string().min(10, "Teléfono inválido"),
   empresa: z.string().min(2, "El nombre de la empresa es obligatorio"),
   servico: z.string().min(1, "Seleccioná un servicio"),
   mensagem: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
@@ -23,7 +22,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const CONTACT_INFO = [
-  { icon: Mail, label: "Email", value: "contato@infinity.com.br" },
+  { icon: Mail, label: "Email", value: "assessoriainfinity@assessoriainfinity.com" },
   { icon: MapPin, label: "Dirección", value: "São Paulo, SP" },
 ];
 
@@ -37,7 +36,7 @@ export default function Contato() {
 
   const form = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { nome: "", email: "", telefone: "", empresa: "", servico: "", mensagem: "" },
+    defaultValues: { nome: "", email: "", empresa: "", servico: "", mensagem: "" },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -52,7 +51,6 @@ export default function Contato() {
           from_name: data.nome,
           nome: data.nome,
           email: data.email,
-          telefone: data.telefone,
           empresa: data.empresa,
           servico: data.servico,
           mensagem: data.mensagem,
@@ -122,22 +120,13 @@ export default function Contato() {
                       )} />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <FormField control={form.control} name="telefone" render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Teléfono</FormLabel>
-                          <FormControl><Input placeholder="+54 11 9999-9999" {...field} /></FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
-                      <FormField control={form.control} name="empresa" render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Empresa</FormLabel>
-                          <FormControl><Input placeholder="Nombre de la empresa" {...field} /></FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
-                    </div>
+                    <FormField control={form.control} name="empresa" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Empresa</FormLabel>
+                        <FormControl><Input placeholder="Nombre de la empresa" {...field} /></FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
 
                     <FormField control={form.control} name="servico" render={({ field }) => (
                       <FormItem>
@@ -155,6 +144,9 @@ export default function Contato() {
                             <SelectItem value="parceiros">Gestión de Socios</SelectItem>
                             <SelectItem value="conciliacao">Conciliación Operativa</SelectItem>
                             <SelectItem value="bi">Reportes y BI</SelectItem>
+                            <SelectItem value="marketing-digital">Marketing Digital</SelectItem>
+                            <SelectItem value="asesoria-internacional">Asesoría Internacional</SelectItem>
+                            <SelectItem value="logistica-internacional">Logística Internacional</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />

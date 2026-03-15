@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Truck, GraduationCap, Plane } from "lucide-react";
+import { Menu, X, ChevronDown, Truck, GraduationCap, Plane, Building2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 
@@ -88,7 +88,22 @@ export default function Header() {
               Sectores <ChevronDown size={13} className="transition-transform group-hover:rotate-180" />
             </button>
             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="bg-card border border-border rounded-xl shadow-xl shadow-black/5 p-2 w-[230px]">
+              <div className="bg-card border border-border rounded-xl shadow-xl shadow-black/5 p-2 w-[280px]">
+                <Link to="/empresarial" className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors">
+                  <Building2 size={15} className="text-primary mt-0.5" />
+                  <div>
+                    <span className="text-sm font-medium text-foreground">Empresarial PJ</span>
+                    <p className="text-xs text-muted-foreground mt-0.5">Soluciones empresariales</p>
+                  </div>
+                </Link>
+                <Link to="/personal" className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors">
+                  <User size={15} className="text-primary mt-0.5" />
+                  <div>
+                    <span className="text-sm font-medium text-foreground">Personal PF</span>
+                    <p className="text-xs text-muted-foreground mt-0.5">Soluciones personalizadas</p>
+                  </div>
+                </Link>
+                <div className="border-t border-border/50 my-1" />
                 {SECTORS.map(({ label, to, icon: SIcon }) => (
                   <Link key={to} to={to} className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors">
                     <SIcon size={15} className="text-primary" />
@@ -146,6 +161,13 @@ export default function Header() {
             </button>
             {mobileSubmenu === "setores" && (
               <div className="pl-4 space-y-1">
+                <Link to="/empresarial" onClick={() => setOpen(false)} className="block px-4 py-2 text-sm font-medium text-primary hover:text-foreground rounded-lg hover:bg-muted">
+                  Empresarial PJ
+                </Link>
+                <Link to="/personal" onClick={() => setOpen(false)} className="block px-4 py-2 text-sm font-medium text-primary hover:text-foreground rounded-lg hover:bg-muted">
+                  Personal PF
+                </Link>
+                <div className="border-t border-border/50 my-1 mx-4" />
                 {SECTORS.map(({ label, to }) => (
                   <Link key={to} to={to} onClick={() => setOpen(false)} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted">
                     {label}
