@@ -63,9 +63,7 @@ function PlatformVisual() {
       {/* Window chrome */}
       <div className="px-5 py-3 border-b bg-muted/50 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="w-5 h-5 rounded gradient-primary flex items-center justify-center">
-            <span className="text-[9px] font-bold text-primary-foreground">∞</span>
-          </span>
+          <img src="/logo.png" alt="Infinity" className="w-5 h-5 object-contain" />
           <span className="text-xs font-medium text-foreground">Infinity Platform</span>
         </div>
         <div className="flex gap-1.5">

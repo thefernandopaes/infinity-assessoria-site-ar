@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Marca */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-2.5 font-heading text-xl font-bold">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg gradient-primary text-primary-foreground text-sm font-bold">∞</span>
+              <img src="/logo.png" alt="Infinity" className="h-8 w-8 object-contain" />
               Infinity
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">

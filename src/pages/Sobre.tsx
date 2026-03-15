@@ -61,7 +61,7 @@ export default function Sobre() {
               <div className="relative w-64 h-64">
                 <div className="absolute inset-0 rounded-3xl gradient-primary opacity-10" />
                 <div className="absolute inset-4 rounded-2xl border-2 border-primary/20 flex items-center justify-center">
-                  <span className="text-8xl font-heading font-bold text-primary/30">∞</span>
+                  <img src="/logo.png" alt="Infinity" className="w-24 h-24 object-contain opacity-30" />
                 </div>
               </div>
             </div>
