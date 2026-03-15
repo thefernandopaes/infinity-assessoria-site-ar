@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 
 const SECTORS = [
-  { label: "Transporte y Logística", to: "/setores/transporte", icon: Truck },
-  { label: "Estudiantil", to: "/setores/estudantil", icon: GraduationCap },
-  { label: "Turismo", to: "/setores/turismo", icon: Plane },
+  { label: "Transporte y Logística", to: "/setores/transporte", icon: Truck, desc: "Soluciones para el sector logístico" },
+  { label: "Estudiantil", to: "/setores/estudantil", icon: GraduationCap, desc: "Servicios para estudiantes" },
+  { label: "Turismo", to: "/setores/turismo", icon: Plane, desc: "Soluciones para el sector turístico" },
 ];
 
 export default function Header() {
@@ -104,10 +104,13 @@ export default function Header() {
                   </div>
                 </Link>
                 <div className="border-t border-border/50 my-1" />
-                {SECTORS.map(({ label, to, icon: SIcon }) => (
-                  <Link key={to} to={to} className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors">
-                    <SIcon size={15} className="text-primary" />
-                    <span className="text-sm font-medium text-foreground">{label}</span>
+                {SECTORS.map(({ label, to, icon: SIcon, desc }) => (
+                  <Link key={to} to={to} className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors">
+                    <SIcon size={15} className="text-primary mt-0.5" />
+                    <div>
+                      <span className="text-sm font-medium text-foreground">{label}</span>
+                      <p className="text-xs text-muted-foreground mt-0.5">{desc}</p>
+                    </div>
                   </Link>
                 ))}
               </div>
