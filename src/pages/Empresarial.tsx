@@ -1,78 +1,138 @@
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SERVICES } from "@/data/services";
+import { ArrowRight, TrendingDown, Eye, FileX, Lock } from "lucide-react";
 import CTASection from "@/components/sections/CTASection";
 
 const PJ_SERVICES = SERVICES.filter((s) => s.category === "pj");
 
+const PAIN_POINTS = [
+  { icon: TrendingDown, text: "Procesos manuales que consumen tiempo y generan retrabajo" },
+  { icon: Eye, text: "Falta de visibilidad sobre la operación en tiempo real" },
+  { icon: FileX, text: "Sistemas desconectados que crean silos de información" },
+  { icon: Lock, text: "Dificultad para escalar sin multiplicar costos operacionales" },
+];
+
+const RESULTS = [
+  { num: "01", text: "Reducción de hasta 80% en el tiempo de procesos operacionales" },
+  { num: "02", text: "Visibilidad total con dashboards y alertas en tiempo real" },
+  { num: "03", text: "Sistemas integrados en un ecosistema unificado y confiable" },
+];
+
 export default function Empresarial() {
   const { ref: heroRef, isVisible: heroVis } = useScrollAnimation();
+  const { ref: painRef, isVisible: painVis } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVis } = useScrollAnimation();
+  const { ref: resultRef, isVisible: resultVis } = useScrollAnimation();
 
   return (
     <>
-      <section ref={heroRef} className="pt-16 pb-12 bg-muted/50 border-b border-border/30">
-        <div className={`container mx-auto px-4 lg:px-8 text-center max-w-3xl ${heroVis ? "animate-fade-in" : "opacity-0"}`}>
+      {/* Hero */}
+      <section ref={heroRef} className="pt-16 pb-16 gradient-dark">
+        <div className={`container mx-auto px-4 lg:px-8 max-w-3xl text-center ${heroVis ? "animate-fade-in" : "opacity-0"}`}>
           <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">Empresarial PJ</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground mb-6">
-            Soluciones empresariales
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
+            Tecnología para escalar tu operación
           </h1>
-          <p className="text-lg text-muted-foreground">
-            Tecnolog&iacute;a y automatizaci&oacute;n para transformar la gesti&oacute;n de tu empresa con eficiencia y escala.
+          <p className="text-lg text-white/70 leading-relaxed">
+            Automatización, integración e inteligencia operacional para empresas que necesitan crecer con eficiencia, control y previsibilidad.
           </p>
         </div>
       </section>
 
-      {PJ_SERVICES.map((service, i) => (
-        <ServiceSection key={service.slug} service={service} index={i} />
-      ))}
-
-      <CTASection />
-    </>
-  );
-}
-
-function ServiceSection({ service, index }: { service: typeof SERVICES[0]; index: number }) {
-  const { ref, isVisible } = useScrollAnimation();
-  const Icon = service.icon;
-  const isReversed = index % 2 !== 0;
-
-  return (
-    <section ref={ref} className={`py-20 ${index % 2 === 0 ? "" : "bg-muted/50"} border-b border-border/30`}>
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`space-y-6 ${isReversed ? "lg:order-2" : ""} ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
-            <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center">
-              <Icon size={28} className="text-primary" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground">{service.title}</h2>
-            <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {service.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-medium">{tag}</span>
-              ))}
-            </div>
-            <Link to={`/servicos/${service.slug}`} className="inline-block text-primary font-medium hover:underline text-sm">
-              Saber m&aacute;s &rarr;
-            </Link>
-          </div>
-
-          <div className={`${isReversed ? "lg:order-1" : ""} ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
-            <div className="bg-card rounded-2xl border p-6 space-y-4">
-              <h3 className="font-heading font-semibold text-foreground">Qu&eacute; incluye</h3>
-              <ul className="space-y-3">
-                {service.features.map((feat) => (
-                  <li key={feat.title} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <span className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="w-2 h-2 rounded-full bg-primary" />
-                    </span>
-                    {feat.title}
-                  </li>
+      {/* Pain points + solution */}
+      <section ref={painRef} className="py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+            <div className={`${painVis ? "animate-fade-in-left" : "opacity-0"}`}>
+              <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">El desafío</p>
+              <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-6">
+                Crecer sin perder el control
+              </h2>
+              <div className="space-y-4">
+                {PAIN_POINTS.map(({ icon: Icon, text }) => (
+                  <div key={text} className="flex items-start gap-3">
+                    <div className="mt-0.5 w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center flex-shrink-0">
+                      <Icon size={16} className="text-destructive" />
+                    </div>
+                    <span className="text-muted-foreground">{text}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
+            <div className={`${painVis ? "animate-fade-in-right" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>
+              <div className="rounded-2xl gradient-primary p-8">
+                <p className="text-sm font-mono font-semibold text-primary-foreground/70 uppercase tracking-wider mb-4">
+                  Nuestra solución
+                </p>
+                <p className="text-primary-foreground text-lg leading-relaxed">
+                  Un ecosistema completo de tecnología que automatiza procesos, integra sistemas y entrega visibilidad total de la operación — para que tu empresa escale sin multiplicar costos.
+                </p>
+                <Link to="/contato" className="inline-flex items-center gap-2 mt-6 text-primary-foreground font-medium text-sm hover:gap-3 transition-all">
+                  Hablá con un especialista <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Services grid */}
+      <section ref={gridRef} className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className={`max-w-2xl mb-12 ${gridVis ? "animate-fade-in-left" : "opacity-0"}`}>
+            <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">Soluciones</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground">
+              Todo lo que tu empresa necesita para operar mejor
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+            {PJ_SERVICES.map(({ icon: Icon, title, shortDesc, slug, tags }, i) => (
+              <Link
+                key={slug}
+                to={`/servicos/${slug}`}
+                className={`group bg-card rounded-xl border-t-2 border-t-primary border-x border-b p-6 transition-all hover:shadow-lg hover:-translate-y-1 ${gridVis ? "animate-fade-in" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.08}s` }}
+              >
+                <div className="w-11 h-11 rounded-lg gradient-primary flex items-center justify-center mb-4">
+                  <Icon size={20} className="text-primary-foreground" />
+                </div>
+                <h3 className="font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{shortDesc}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {tags.map((tag) => (
+                    <span key={tag} className="px-2 py-0.5 rounded-full bg-accent text-accent-foreground text-[11px] font-medium">{tag}</span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section ref={resultRef} className="py-20">
+        <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+          <div className={`text-center mb-12 ${resultVis ? "animate-fade-in" : "opacity-0"}`}>
+            <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">Resultados</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground">Lo que cambia en tu operación</h2>
+          </div>
+          <div className="space-y-4">
+            {RESULTS.map(({ num, text }, i) => (
+              <div
+                key={num}
+                className={`flex items-center gap-5 bg-card rounded-xl border p-5 ${resultVis ? "animate-fade-in" : "opacity-0"}`}
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <span className="text-3xl font-mono font-black text-primary/20 flex-shrink-0">{num}</span>
+                <p className="text-foreground font-medium">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
   );
 }
