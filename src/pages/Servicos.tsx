@@ -59,11 +59,11 @@ function ServiceSection({ service, index }: { service: typeof SERVICES[0]; index
               <h3 className="font-heading font-semibold text-foreground">Qué incluye</h3>
               <ul className="space-y-3">
                 {service.features.map((feat) => (
-                  <li key={feat} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <li key={feat.title} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <span className="w-2 h-2 rounded-full bg-primary" />
                     </span>
-                    {feat}
+                    {feat.title}
                   </li>
                 ))}
               </ul>
