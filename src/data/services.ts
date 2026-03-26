@@ -307,7 +307,6 @@ export const SERVICES: Service[] = [
       { title: "Reducci\u00f3n de costos log\u00edsticos", desc: "Identificaci\u00f3n de oportunidades de ahorro en fletes, consolidaci\u00f3n de cargas y negociaci\u00f3n con operadores." },
       { title: "Gesti\u00f3n aduanera integral", desc: "Asesoramiento en clasificaci\u00f3n arancelaria, reg\u00edmenes aduaneros, licencias y tr\u00e1mites ante la Aduana argentina." },
       { title: "Documentaci\u00f3n de viaje y comercio exterior", desc: "Preparaci\u00f3n y revisi\u00f3n de toda la documentaci\u00f3n requerida: facturas, packing lists, certificados de origen y permisos." },
-      { title: "Seguimiento de embarques", desc: "Monitoreo en tiempo real de cargas en tr\u00e1nsito con alertas de estado y estimaciones de arribo actualizadas." },
       { title: "Asesoramiento en normativa vigente", desc: "Actualizaci\u00f3n permanente sobre cambios regulatorios, restricciones y oportunidades en comercio exterior argentino." },
     ],
     benefits: [
