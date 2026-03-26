@@ -1,6 +1,6 @@
 import {
   Workflow, BarChart3, Cog, Users, Zap, FileCheck,
-  Code, LayoutDashboard, Handshake, CreditCard,
+  Code, LayoutDashboard, Handshake,
   Megaphone, Globe, Ship,
   type LucideIcon,
 } from "lucide-react";
@@ -244,30 +244,6 @@ export const SERVICES: Service[] = [
       { title: "Socios m\u00e1s aut\u00f3nomos", desc: "Con acceso a dashboards y APIs, los socios resuelven dudas operacionales sin contactar a tu equipo." },
     ],
     useCases: ["Integraci\u00f3n con proveedores y distribuidores", "Conexi\u00f3n con operadores log\u00edsticos", "Intercambio de datos con instituciones financieras", "Ecosistemas de marketplace"],
-    category: "pj",
-  },
-  {
-    icon: CreditCard,
-    slug: "automacao-pagamentos",
-    title: "Automatizaci\u00f3n de Pagos",
-    shortDesc: "Flujos de pago automatizados.",
-    desc: "Automatizaci\u00f3n completa de los flujos de pago, desde la emisi\u00f3n hasta la conciliaci\u00f3n, con seguridad y trazabilidad total.",
-    longDesc: "El flujo financiero es el coraz\u00f3n de cualquier operaci\u00f3n. Cobros atrasados, pagos duplicados, falta de conciliaci\u00f3n y procesos manuales de aprobaci\u00f3n generan p\u00e9rdidas reales y previsibles. Nuestra soluci\u00f3n automatiza todo el ciclo de pago \u2014 desde la generaci\u00f3n de cobros hasta la confirmaci\u00f3n de recepci\u00f3n y conciliaci\u00f3n bancaria. Con reglas de negocio configurables, cada tipo de pago sigue el flujo correcto autom\u00e1ticamente, con trazabilidad completa y reportes financieros en tiempo real.",
-    tags: ["Pagos", "Automatizaci\u00f3n", "Seguridad"],
-    features: [
-      { title: "Procesamiento automatizado", desc: "Generaci\u00f3n y env\u00edo autom\u00e1tico de transferencias, links de pago y facturas seg\u00fan reglas de negocio." },
-      { title: "Conciliaci\u00f3n de pagos", desc: "Cruce autom\u00e1tico entre cobros emitidos y pagos recibidos con identificaci\u00f3n de pendientes." },
-      { title: "Reportes financieros", desc: "Visi\u00f3n consolidada de cobros, morosidad, proyecciones de caja y rendimiento por canal de cobranza." },
-      { title: "Integraci\u00f3n con gateways", desc: "Conexi\u00f3n con los principales gateways e instituciones financieras del mercado argentino." },
-      { title: "Secuencia de cobranza automatizada", desc: "Secuencia programada de recordatorios, notificaciones y escalamientos para reducir la morosidad." },
-      { title: "Aprobaciones y niveles de autorizaci\u00f3n", desc: "Flujos de aprobaci\u00f3n configurables por monto, tipo de pago y jerarqu\u00eda organizacional." },
-    ],
-    benefits: [
-      { title: "Reducci\u00f3n de morosidad", desc: "Secuencias de cobranza automatizadas y recordatorios proactivos recuperan pagos antes de que se conviertan en p\u00e9rdidas." },
-      { title: "Flujo de caja predecible", desc: "Visibilidad en tiempo real sobre cobros futuros y pendientes permite una planificaci\u00f3n financiera precisa." },
-      { title: "Compliance financiero garantizado", desc: "Pista de auditor\u00eda completa y flujos de aprobaci\u00f3n garantizan conformidad con pol\u00edticas internas y externas." },
-    ],
-    useCases: ["Cobro recurrente de cuotas", "Split de pagos entre socios", "Gesti\u00f3n de pagos a proveedores", "Conciliaci\u00f3n de ventas en marketplace"],
     category: "pj",
   },
   {
